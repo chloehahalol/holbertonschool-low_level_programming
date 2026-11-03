@@ -4,7 +4,7 @@
  * main - prints the alphabet in lower case, and then
  * in upper case, followed by a new line.
  *
- * return: 0 on completion.
+ * Return: 0 if successful.
 */
 int main(void)
 {
