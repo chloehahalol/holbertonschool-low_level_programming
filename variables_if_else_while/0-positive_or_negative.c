@@ -6,7 +6,7 @@
  * main - Generates a random number and outputs whether it is
  * a positive number, negative number or if it is equal to 0.
  *
- * Returns: whether the number is positive, zero or negative.
+ * Return: 0 on success. 
 */
 int main(void)
 {
