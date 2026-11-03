@@ -3,9 +3,9 @@
 /**
  * print_alphabet - writes the alphabet
  *
- * Return: On success nothing.
+ * Return: On success 0.
  */
-void print_alphabet(void)
+int print_alphabet(void)
 {
 	char letter;
 
@@ -13,4 +13,5 @@ void print_alphabet(void)
 		_putchar(letter);
 
 	_putchar('\n');
+	return (0);
 }
