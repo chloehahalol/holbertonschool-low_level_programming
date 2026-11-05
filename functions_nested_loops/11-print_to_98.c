@@ -1,6 +1,12 @@
 #include "main.h"
 #include <stdio.h>
 
+/**
+ * print_to_98 - prints all integers from n to 98.
+ * @n: Integer to print numbers from.
+ *
+ * Return: Integers from n to 98.
+ */
 void print_to_98(int n)
 {
 	if (n < 98)
