@@ -6,58 +6,37 @@
  */
 void times_table(void)
 {
-	int a;
-	int b;
+	int row;
+	int column;
 	int result;
 
-	/* a 1- 9 */
-	for (a = 0;  a < 10; a++)
+	for (row = 0;  row < 10; row++)
 	{
-		/* b 1-9 */
-		for (b = 0; b < 10; b++)
+		for (column = 0; column < 10; column++)
 		{
-			result = a * b;
+			result = row * column;
 
-			/* single digit */
-			if (result < 10)
+			if (column != 0 && result < 10)
 			{
-				/* middle columns  */
-				if (b != 0 && b < 9)
-				{
-					_putchar(' ');
-					_putchar(' ');
-					_putchar('0' + result);
-					_putchar(',');
-				}
-				/* last column */
-				else if (b == 9)
-				{
-					_putchar(' ');
-					_putchar(' ');
-					_putchar('0' + result);
-					_putchar('\n');
-				}
-				/* first */
-				else
-				{
-					_putchar('0' + result);
-					_putchar(',');
-				}
+				_putchar(' ');
+				_putchar(' ');
 			}
-			/* double digit */
+
+			if (result >= 9)
+			{
+				_putchar(' ');
+				_putchar('0' + result / 10);
+			}
+
+			_putchar('0' + result % 10);
+
+			if (column != 9 )
+			{
+				_putchar(',');
+			}
 			else
 			{
-					_putchar(' ');
-					_putchar('0' + result / 10);
-					_putchar('0' + result % 10);
-				if (b < 9)
-				{
-					_putchar(',');
-				}
-				else
-				{
-					_putchar('\n');
-				}
+				_putchar('\n');
 			}
 		}
 	}
