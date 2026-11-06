@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+ * main: prints numbers 1 to 100, multiples of 3
+ * print Fizz and multiples of 5 print Buzz.
+ *
+ * Return: 0 upon succes.
+ */
 int main(void)
 {
 	int i;
@@ -23,4 +29,5 @@ int main(void)
 			printf("%d ", i);
 		}
 	}
+	return (0);
 }
