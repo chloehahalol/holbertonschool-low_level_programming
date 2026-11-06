@@ -10,29 +10,29 @@ void print_triangle(int size)
 	int space;
 	int hash;
 
-	if (size <= 0)
-    	{
+	if (size <= 0)	
+	{
 		_putchar('\n');
-        	return;
-    	}
+		return;
+	}
 
-    	for (i = 0; i < size; i++)
-    	{
-        	space = 0;
-        	while (space < size - i - 1)
-        	{
-            		_putchar(' ');
-            		space++;
-        	}
+	for (i = 0; i < size; i++)
+	{
+		space = 0;
+		while (space < size - i - 1)
+		{
+			_putchar(' ');
+			space++;
+		}
 
-        	hash = 0;
+		hash = 0;
 
 		while (hash <= i)
-        	{
-            		_putchar('#');
-            		hash++;
-        	}
+		{
+			_putchar('#');
+			hash++;
+		}
 
-        _putchar('\n');
-    	}
+	_putchar('\n');
+	}
 }
