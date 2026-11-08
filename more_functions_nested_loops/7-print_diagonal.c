@@ -1,11 +1,17 @@
 #include "main.h"
 
+/**
+ * print_diagonal - Draws a diagonal line on
+ * the terminal.
+ * @n: how long the line should be.
+ *
+ */
 void print_diagonal(int n)
 {
 	int row;
 	int i;
 
-	if ( n > 0 )
+	if (n > 0)
 	{
 		for (row = 0; row < n; row++)
 		{
@@ -14,11 +20,11 @@ void print_diagonal(int n)
 				for (i = 0; i < row; i++)
 				{
 					_putchar(' ');
-				} 	 
+				}
 			}
 			_putchar(92);
 			_putchar('\n');
-		}	
+		}
 	} else
 	{
 		_putchar('\n');
