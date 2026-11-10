@@ -4,16 +4,21 @@ The purpose of this report is to explain how algorithmic efficiency connects to 
 
 ## Measurement Methodology
 Execution time was measured using clock() and converted to seconds using CLOCKS_PER_SEC. 
-Execution time was measured three times, and the average was recorded. 
+
+For each task, execution time was measured three times and the average was recorded. 
 
 ### Task 1 - Baseline
-Measured the CPU time required for 100 million iterations. 
+To establish a baseline, CPU time required for 100 million iterations was measured. 
 
 ### Task 2 - Algorithmic Efficiency Comparison
-Compared the execution time between two algorithms on a dataset of 50,000 elements: (1) a nested-loop and (2) a singple-pass algorithm. 
+On a dataset of 50,000 elements, two algorithms were used to count the number of even numbers.
+(1) A naive loop
+(2) A single-pass
+
+The CPU time and number of loops required to execute this task was measured.
 
 ### Task 3 - Controlled Instrumentation Experiment
-Compared the execution time when building, processing and reducing a data set of 50,000 elements. 
+On a dataset of 50,000 elements, the CPU time to build, process and reduce the data set was measured.
 
 ## Observed Performance Differences
 
@@ -37,7 +42,7 @@ Observation: This is the baseline for the CPU after running a large workload.
 | Execution time (s) | 2.20075 | 0.00009 |
 | Result | 625,025,000 | 25,000 |
 
-Observation: Both algorithms processed an array of 50,000 elements. However, the naive algorithm took approximately 25,296 times longer than the single-pass. Its nested loops repeated examined the same elements, while the single-pass algorithm examined each element once. The algorithms produced different results, limiting their direct comparison.   
+Observation: Both algorithms processed an array of 50,000 elements. However, the naive algorithm took approximately 25,296 times longer than the single-pass. Its nested loops repeatededly examined the same elements, while the single-pass algorithm examined each element once. 
 
 ### Task 3 - Controlled Instrumentation Experiment
 
@@ -50,13 +55,20 @@ Observation: All three operations involved a dataset of 50,000 elements. However
 
 ## Relation Between Runtime and Energy Consumption
 
-Runtime and energy consumption are related because computers require electrical power to perform calculations. Programs that perform unecessary computations may keep the CPU active for longer, which increases energy consumption.
+Runtime and energy consumption are related because computers require electrical power to perform calculations. Programs that perform unecessary computations will require more CPU time and therefore may increase energy consumption.
 
+In Task 2, two algorithms were compared to understand algorithmic efficiency. Despite processing the same sized array, the naive algorithm took  25,296 times longer to execute than the single-pass. Since the naive algorithm used two loops, it performed 1,250,025,000 inner-loop iterations, compared to the 50,000 iterations performed by the single-pass. 
+
+Here, the design of the naive algorithm led to more iterations and longer CPU runtime. These results illustrate that repeated processing of the same elements can increase CPU runtime, highlighting the importance of algorithmic efficiency.
+
+Task 3 revealed similar results, where the same dataset was processed however differing operations lead to different CPU run times.
+
+These results demonstrate that algorithm design can significantly influence CPU runtime. By reducing redundant computations, software engineers may also reduce the energy required to execut programs. 
 
 ## Limitations of the Experiment
 
-Shorter CPU execution time does not necessarily mean lower energy consumption, because power usage varies depending on workload and hardware.
-
-Furthermore, this task did not measure real power draw in watts, making any conclusions regarding energy consumption speculative. It is only assumed that longer runtime leads to longer CPU activity which increases energy consumption. 
+Shorter CPU execution time does not necessarily mean lower energy consumption, because power usage varies depending on workload and hardware. This experiment measured the CPU time rather than electrical power consumption. As a result, actual energy savings cannot be determined. 
 
 ## Practical Engineering Takeaway
+
+For software engineers, efficient algorithm design can reduce unnecessary CPU work and potentially lower energy cosumption.
