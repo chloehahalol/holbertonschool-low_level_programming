@@ -31,7 +31,7 @@ On a dataset of 50,000 elements, the CPU time to build, process and reduce the d
 | 3 | 0.125871 |
 | Avg | 0.124468 |
 
-Observation: This is the baseline for the CPU after running a large workload. 
+Observation: This is the baseline for the CPU after running a large workload. Despite the same algorithm being run, the recorded execution times varied slightly. 
 
 ### Task 2 -  Algorithmic Efficiency Comparison
 
@@ -51,7 +51,7 @@ Observation: Both algorithms processed an array of 50,000 elements. However, the
 | Dataset | 50,000 | 50,000 | 50,000 |
 | Execution time (s) | 0.000507 | 0.000274 | 0.000192 |
 
-Observation: All three operations involved a dataset of 50,000 elements. However, their measured execution times differed. BUILD took the longest at 0.000507 seconds, accounting for 52% of the total measured CPU time. It took 1.85 times as long as PROCESS and 2.64 times as long as REDUCE.
+Observation: All three operations involved a dataset of 50,000 elements. However, their measured execution times differed. BUILD took the longest at 0.000507 seconds, accounting for 52% of the total measured CPU time. It took 1.85 times as long as PROCESS and 2.64 times as long as REDUCE. 
 
 ## Relation Between Runtime and Energy Consumption
 
@@ -61,9 +61,9 @@ In Task 2, two algorithms were compared to understand algorithmic efficiency. De
 
 Here, the design of the naive algorithm led to more iterations and longer CPU runtime. These results illustrate that repeated processing of the same elements can increase CPU runtime, highlighting the importance of algorithmic efficiency.
 
-Task 3 revealed similar results, where the same dataset was processed however differing operations lead to different CPU run times.
+In comparison to Task 3, three different processes processed the same sized dataset. Despite the same dataset, BUILD was 1.85 times as long as PROCESS and 2.64 times as long as REDUCE. Notably, BUILD has the shortest line of code (10 lines) compared to PROCESS (14 lines) and REDUCE (11 lines). This indicates that number of lines of code does not influence CPU run time or algorithmic efficiency but rather the operations within each iteration.
 
-These results demonstrate that algorithm design can significantly influence CPU runtime. By reducing redundant computations, software engineers may also reduce the energy required to execut programs. 
+These results demonstrate that algorithm design can influence CPU runtime. By reducing redundant computations, software engineers may also reduce the energy required to execut programs. 
 
 ## Limitations of the Experiment
 
@@ -72,3 +72,5 @@ Shorter CPU execution time does not necessarily mean lower energy consumption, b
 ## Practical Engineering Takeaway
 
 For software engineers, efficient algorithm design can reduce unnecessary CPU work and potentially lower energy cosumption.
+
+To measure this and investigate potential energy savings according to measured CPU runtime, engineers can measure runtime on different stages for when CPU time is spent. 
