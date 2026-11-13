@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * _strcomp - compares two strings 
+ * @s1: string one
+ * @s2: string two
+ *
+ * Return: returns the comparison
+ */
 int _strcmp(char *s1, char *s2)
 {
 	int i;
@@ -7,7 +14,6 @@ int _strcmp(char *s1, char *s2)
 	int b;
 
 	i = 0;
-	check = 0;
 	a = 0;
 	b = 0;
 
