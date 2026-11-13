@@ -10,7 +10,7 @@ void puts_half(char *str)
 	int start;
 
 	length = 0;
-	start = 0; 
+	start = 0;
 
 	/*Find length of the string*/
 	while (str[length] != '\0')
