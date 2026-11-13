@@ -7,12 +7,10 @@
 void puts_half(char *str)
 {
 	int length;
-	int i;
-	int odd;
 	int start;
 
 	length = 0;
-	i = 0;
+	start = 0; 
 
 	/*Find length of the string*/
 	while (str[length] != '\0')
