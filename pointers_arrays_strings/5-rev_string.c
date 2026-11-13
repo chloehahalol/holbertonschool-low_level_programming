@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * rev_strong - reverse a string
+ * rev_string - reverse a string
  * @s: a string
  */
 void rev_string(char *s)
@@ -25,7 +25,7 @@ void rev_string(char *s)
 		length--; /*Move down a space*/
 		temp = s[i]; /*Store text in temp s[i] is the first char*/
 		s[i] = s[length]; /*Store last char in first char */
-		s[length] = temp; /*Store first char in last char */ 
+		s[length] = temp; /*Store first char in last char */
 		i++; /*Move up a space*/
 	}
 }
