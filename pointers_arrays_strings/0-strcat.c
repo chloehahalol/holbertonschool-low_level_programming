@@ -20,8 +20,7 @@ char *_strcat(char *dest, char *src)
 		length_of_dest++;
 	}
 
-	do
-	{
+	do {
 		i++;
 		dest[length_of_dest + i] = src[i];
 	} while (src[i] != '\0');
