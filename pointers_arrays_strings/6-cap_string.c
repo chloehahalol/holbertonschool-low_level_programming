@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * cap_string: proper case a string
+ * cap_string - proper case a string
  * @s: the string
  *
  * Return: return the string capitalised
@@ -9,7 +9,7 @@
 char *cap_string(char *s)
 {
 	int i;
- 	int j;
+	int j;
 	char sep[] = " \t\n,;.!?\"(){}";
 
 	i = 0;
