@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
 
 /**
  * display_menu - displays the calculator menu
@@ -18,12 +16,12 @@ int display_menu(void)
 		"4) Divide\n"
 		"0) Quit\n");
 
-	scanf(" %d", &num);
+	scanf("%d", &num);
 
 	return (num);
 }
 
-/** 
+/**
  * add - adds two integers
  * @a: first integer
  * @b: second integer
@@ -47,7 +45,7 @@ int subtract(int a, int b)
       return (a - b);
 }
 
-/** 
+/**
  * multiply - multiplies two integers
  * @a: first integer
  * @b: second integer
@@ -59,7 +57,7 @@ int multiply(int a, int b)
       return (a * b);
 }
 
-/** 
+/**
  * divide - divides two integers
  * @a: first integer
  * @b: second integer
@@ -126,7 +124,7 @@ int main(void)
 			{
 				if (b == 0)
 				{
-					printf("Error: division by zero");
+					printf("Error: division by zero\n");
 				}
 
 				else
@@ -144,14 +142,14 @@ int main(void)
 		}
 		else
 		{
-			printf("Invalid choice");
+			printf("Invalid choice\n");
 		}
 
 		num = display_menu();
 	}
 
 	printf(	"Choice: 0\n");
-	printf("Bye!\0");
+	printf("Bye!\n");
 
 	return (0);
 }
