@@ -99,6 +99,7 @@ int main(void)
 					printf("Error: division by zero");
 					success = 0;
 				}
+			}
 			else 
 			{
 				result = divide(a,b);
@@ -110,13 +111,13 @@ int main(void)
 			printf("Invalid choice"); 
 		}
 	}
-		if (success = 1)
+		if (success == 1)
 		{
 			printf("Result: %d\n", result);
 		}
+		success = 0;
 		num = display_menu();
 	}
-
 	printf(	"Choice: 0\n"
 		"Bye!");
 	return (0);
