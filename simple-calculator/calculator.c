@@ -7,21 +7,20 @@
  */
 int display_menu(void)
 {
+	int num;
+ 		
+	num = 0;
+
 	printf("Simple Calculator\n");	
 	printf("1) Add\n"
 		"2) Subtract\n"
 		"3) Multiply\n"
 		"4) Divide\n"
 		"0) Quit\n");	
+	
 	scanf(" %d", &num); 
 	
-	if (num == 0)
-	{
-		printf(	"Choice: 0\n"
-			"Bye!");
-		exit(0);
-	} 
-
+	return (num);
 }
 
 /**
@@ -32,29 +31,22 @@ int display_menu(void)
  */
 int add(int a, int b)
 {
-	printf("Result: %d\n", result);
 	return (a + b);
 }
 
 int subtract(int a, int b)
 {		
-	printf("Result: %d\n", result);
 	return (a - b);	
 }
 
-int muptiply(int a, int b)
+int multiply(int a, int b)
 {
-	printf("Result: %d\n", result);
 	return (a * b);	
 }
 
 int divide(int a, int b)
 {
-	if (b == 0)
-	{
-		return("Error: division by zero\n");
-	}
-	return(a/b);	
+	return(a / b);	
 }
 
 /**
@@ -65,8 +57,8 @@ int divide(int a, int b)
 int main(void)
 {
 	int num;
-	int A;
-	int B;
+	int a;
+	int b;
 	int result;
 
 	num = display_menu();
@@ -89,23 +81,25 @@ int main(void)
 		}
 		else if (num == 3)
 		{
-			result = multiply(a,b)	
+			result = multiply(a,b);
 		}
 		else if (num == 4)
 		{
-			result = divide(a,b);
+			if (b == 0)
+			{
+				printf("Error: division by zero");
+			}
+			else 
+			{
+				result = divide(a,b);
+			}
 		}
 
 		printf("Result: %d\n", result);
-		display_menu();
-
-		}
+		num = display_menu();
 	}
-	if (num == 0)
-	{
-		printf(	"Choice: 0\n"
-			"Bye!");
-		exit(0);
-	} 
+
+	printf(	"Choice: 0\n"
+		"Bye!");
 	return (0);
 } 
