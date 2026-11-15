@@ -14,6 +14,35 @@ void display_menu(void)
 		"0) Quit\n");
 }
 
+int add(int a, int b)
+{
+		printf("Choice: 1\n");
+		
+		printf("A: ");
+		scanf("%d", &A);
+		printf("B: ");
+		scanf("%d", &B);
+		
+		result = A + B;
+		
+		printf("Result: %d\n", result);
+		
+		return (result);
+
+}
+
+int subtract()
+{
+}
+
+int muptiply()
+{
+}
+
+int divide()
+{
+}
+
 /**
  * main - a simple calculator. 
  * 
@@ -21,39 +50,72 @@ void display_menu(void)
  */
 int main(void)
 {
-	char num;
-	int number;
+	int num;
+	int A;
+	int B;
+	int result;
 
 	printf("Simple Calculator\n");	
 
 	display_menu();
-	scanf(" %c", &num);
-	number = num - '0'; 	
+	scanf(" %d", &num); /*Scans user input*/
 
 	if (number != 0)
 	{
 		while (number != 0)
 		{
-			if (num == 1)
+			if (number == 1)
 			{
-				printf(	"Choice: 1\n");
+				printf("Choice: 1\n");
+				printf("A: ");
+				scanf("%d", &A);
+				printf("B: ");
+				scanf("%d", &B);
+				result = A + B;
+				printf("Result: %d\n", result);
 			}
-			else if (num == 2)
+			else if (number == 2)
 			{
-				printf(	"Choice: 2\n");
+				printf(	"Choice: 2\n");	
+				printf("A: ");
+				scanf("%d", &A);
+				printf("B: ");
+				scanf("%d", &B);
+				result = A -  B;
+				printf("Result: %d\n", result);
 			}
-			else if (num == 3)
+			else if (number == 3)
 			{
-				printf(	"Choice: 3\n");
+				printf(	"Choice: 3\n");	
+				printf("A: ");
+				scanf("%d", &A);
+				printf("B: ");
+				scanf("%d", &B);
+				result = A*B;	
+				printf("Result: %d\n", result);
 			}
-			else if	 (num == 4)
+			else if	 (number == 4)
 			{
-				printf(	"Choice: 4\n");
+				printf(	"Choice: 4\n");	
+				printf("A: ");
+				scanf("%d", &A);
+				printf("B: ");
+				scanf("%d", &B);
+				if (B == 0)
+				{
+					printf("Error: division by zero\n");
+				}
+				else
+				{
+					result = A/B;
+					printf("Result: %d\n", result);
+				}	
 			}
-			else if (num > 4)
+			else
 			{	
 				printf("Invalid choice.\n");
 			}
+
 			display_menu();
 			scanf(" %c", &num);
 			number = num - '0';	
