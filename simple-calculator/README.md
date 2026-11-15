@@ -1,8 +1,10 @@
-# Simple Calculator 
+# Simple Calculator 🔢
 
 ## Description
 
-A terminal-based calculator written in C. The program displays a menu, accepts an operation and two integer operands, prints the result, and repeats until the user chooses to quit.
+A terminal-based calculator written in C.
+
+The program displays a menu, accepts an operation and two integer operands, prints the result, and repeats until the user chooses to quit.
 
 ## Compilation
 
@@ -24,11 +26,11 @@ Compile with GCC using the following command:
 | 4      | Division       |
 | 0      | Quit           |
 
-## Numeric behaviour (integer vs decimal)i
+## Numeric behaviour (integer vs decimal)
 
 - Uses integer operands and integer results.
 - Division truncates fractional results toward zero.
-- Example: 10 / 4 produces 2.
+*Example: 10 / 4 produces 2.*
 
 ## Known limitations
 
