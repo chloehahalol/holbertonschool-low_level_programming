@@ -107,13 +107,11 @@ int main(void)
 				result = add (a, b);
 				success = 1;
 			}
-
 			else if (num == 2)
 			{
 				result = subtract(a,b);
 				success = 1;
 			}
-
 			else if (num == 3)
 			{
 				result = multiply(a,b);
@@ -126,19 +124,16 @@ int main(void)
 				{
 					printf("Error: division by zero\n");
 				}
-
 				else
 				{
 					result = divide(a,b);
 					success = 1;
 				}
 			}
-
 			if (success == 1)
 			{
 				printf("Result: %d\n", result);
 			}
-
 		}
 		else
 		{
