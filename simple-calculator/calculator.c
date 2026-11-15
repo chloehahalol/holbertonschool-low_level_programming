@@ -3,77 +3,104 @@
 #include <ctype.h>
 
 /**
- * display_menu - displays calculator menu.
+ * display_menu - displays the calculator menu
+ *
+ * Return: the user's choice
  */
 int display_menu(void)
 {
 	int num;
- 		
 	num = 0;
 
 	printf("1) Add\n"
 		"2) Subtract\n"
 		"3) Multiply\n"
 		"4) Divide\n"
-		"0) Quit\n");	
-	
-	scanf(" %d", &num); 
-	
+		"0) Quit\n");
+
+	scanf(" %d", &num);
+
 	return (num);
 }
 
-/**
- * function_name - description
- * @parameter: description
+/** 
+ * add - adds two integers
+ * @a: first integer
+ * @b: second integer
  *
- * Return: description
+ * Return: sum of a and b
  */
-int add(int a, int b)
+int  add(int a, int b)
 {
-	return (a + b);
+      return (a + b);
 }
 
+/**
+ * subtract - subtracts two integers
+ * @a: first integer
+ * @b: second integer
+ *
+ * Return: subtract a and b
+ */
 int subtract(int a, int b)
-{		
-	return (a - b);	
+{
+      return (a - b);
 }
 
+/** 
+ * multiply - multiplies two integers
+ * @a: first integer
+ * @b: second integer
+ *
+ * Return: multiplication of a and b
+ */
 int multiply(int a, int b)
 {
-	return (a * b);	
+      return (a * b);
 }
 
+/** 
+ * divide - divides two integers
+ * @a: first integer
+ * @b: second integer
+ *
+ * Return: division of a and b
+ */
 int divide(int a, int b)
 {
-	return(a / b);	
+      return(a / b);
 }
 
 /**
- * main - a simple calculator. 
- * 
- * Return: 0 on success. 
+ * main - a simple calculator.
+ *
+ * Return: 0 on success.
  */
 int main(void)
 {
 	int num;
 	int a;
 	int b;
-	int result;	
+	int result;
 	int success;
-	
-	success = 0;
-	
-	printf("Simple Calculator\n");	
+
+	printf("Simple Calculator\n");
 
 	num = display_menu();
 
 	while (num != 0)
 	{
+		/*Success is if the calculation was successful*/
+		success = 0;
+
+		/*Check if the menu choice is valid*/
 		if (num > 0 && num < 5)
 		{
 			printf("Choice: %d\n", num);
+
 			printf("A: ");
 			scanf("%d", &a);
+
 			printf("B: ");
 			scanf("%d", &b);
 
@@ -82,43 +109,49 @@ int main(void)
 				result = add (a, b);
 				success = 1;
 			}
+
 			else if (num == 2)
 			{
 				result = subtract(a,b);
 				success = 1;
 			}
+
 			else if (num == 3)
 			{
 				result = multiply(a,b);
 				success = 1;
 			}
+
 			else if (num == 4)
 			{
 				if (b == 0)
 				{
 					printf("Error: division by zero");
-					success = 0;
+				}
+
+				else
+				{
+					result = divide(a,b);
+					success = 1;
 				}
 			}
-			else 
+
+			if (success == 1)
 			{
-				result = divide(a,b);
-				success = 1;
+				printf("Result: %d\n", result);
 			}
+
 		}
 		else
 		{
-			printf("Invalid choice"); 
+			printf("Invalid choice");
 		}
-	}
-		if (success == 1)
-		{
-			printf("Result: %d\n", result);
-		}
-		success = 0;
+
 		num = display_menu();
 	}
-	printf(	"Choice: 0\n"
-		"Bye!");
+
+	printf(	"Choice: 0\n");
+	printf("Bye!\0");
+
 	return (0);
-} 
+}
