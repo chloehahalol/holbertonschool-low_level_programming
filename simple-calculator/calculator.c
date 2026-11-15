@@ -5,42 +5,56 @@
 /**
  * display_menu - displays calculator menu.
  */
-void display_menu(void)
+int display_menu(void)
 {
+	printf("Simple Calculator\n");	
 	printf("1) Add\n"
 		"2) Subtract\n"
 		"3) Multiply\n"
 		"4) Divide\n"
-		"0) Quit\n");
+		"0) Quit\n");	
+	scanf(" %d", &num); 
+	
+	if (num == 0)
+	{
+		printf(	"Choice: 0\n"
+			"Bye!");
+		exit(0);
+	} 
+
 }
 
+/**
+ * function_name - description
+ * @parameter: description
+ *
+ * Return: description
+ */
 int add(int a, int b)
 {
-		printf("Choice: 1\n");
-		
-		printf("A: ");
-		scanf("%d", &A);
-		printf("B: ");
-		scanf("%d", &B);
-		
-		result = A + B;
-		
-		printf("Result: %d\n", result);
-		
-		return (result);
-
+	printf("Result: %d\n", result);
+	return (a + b);
 }
 
-int subtract()
-{
+int subtract(int a, int b)
+{		
+	printf("Result: %d\n", result);
+	return (a - b);	
 }
 
-int muptiply()
+int muptiply(int a, int b)
 {
+	printf("Result: %d\n", result);
+	return (a * b);	
 }
 
-int divide()
+int divide(int a, int b)
 {
+	if (b == 0)
+	{
+		return("Error: division by zero\n");
+	}
+	return(a/b);	
 }
 
 /**
@@ -55,73 +69,39 @@ int main(void)
 	int B;
 	int result;
 
-	printf("Simple Calculator\n");	
+	num = display_menu();
 
-	display_menu();
-	scanf(" %d", &num); /*Scans user input*/
-
-	if (number != 0)
+	while (num != 0)
 	{
-		while (number != 0)
-		{
-			if (number == 1)
-			{
-				printf("Choice: 1\n");
-				printf("A: ");
-				scanf("%d", &A);
-				printf("B: ");
-				scanf("%d", &B);
-				result = A + B;
-				printf("Result: %d\n", result);
-			}
-			else if (number == 2)
-			{
-				printf(	"Choice: 2\n");	
-				printf("A: ");
-				scanf("%d", &A);
-				printf("B: ");
-				scanf("%d", &B);
-				result = A -  B;
-				printf("Result: %d\n", result);
-			}
-			else if (number == 3)
-			{
-				printf(	"Choice: 3\n");	
-				printf("A: ");
-				scanf("%d", &A);
-				printf("B: ");
-				scanf("%d", &B);
-				result = A*B;	
-				printf("Result: %d\n", result);
-			}
-			else if	 (number == 4)
-			{
-				printf(	"Choice: 4\n");	
-				printf("A: ");
-				scanf("%d", &A);
-				printf("B: ");
-				scanf("%d", &B);
-				if (B == 0)
-				{
-					printf("Error: division by zero\n");
-				}
-				else
-				{
-					result = A/B;
-					printf("Result: %d\n", result);
-				}	
-			}
-			else
-			{	
-				printf("Invalid choice.\n");
-			}
+		printf("Choice: %d\n", num);
+		printf("A: ");
+		scanf("%d", &a);
+		printf("B: ");
+		scanf("%d", &b);
 
-			display_menu();
-			scanf(" %c", &num);
-			number = num - '0';	
+		if (num == 1)
+		{
+			result = add (a, b);
+		}
+		else if (num == 2)
+		{
+			result = subtract(a,b);
+		}
+		else if (num == 3)
+		{
+			result = multiply(a,b)	
+		}
+		else if (num == 4)
+		{
+			result = divide(a,b);
+		}
+
+		printf("Result: %d\n", result);
+		display_menu();
+
 		}
 	}
-	else if (number == 0)
+	if (num == 0)
 	{
 		printf(	"Choice: 0\n"
 			"Bye!");
