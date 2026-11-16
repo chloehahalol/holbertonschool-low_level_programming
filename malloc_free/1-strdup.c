@@ -21,17 +21,17 @@ char *_strdup(char *str)
 		return (0);
 	}
 
-	if (str[length] == 0)
-	{
-		return (0);
-	}
-
 	while (str[length] != '\0')
 	{
 		length++;
 	}
 
 	copy = malloc(length + 1);
+
+	if (copy == NULL)
+	{
+    		return (NULL);
+	}
 
 	while (i <= length)
 	{
