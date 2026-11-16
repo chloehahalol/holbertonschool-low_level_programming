@@ -25,7 +25,6 @@ char *create_array(unsigned int size, char c)
 
 		while (i < size)
 		{
-			i++;
 			if (array == NULL)
 			{
 				return (NULL);
@@ -34,6 +33,7 @@ char *create_array(unsigned int size, char c)
 			{
 				array[i] = c;
 			}
+			i++;
 		}
 		return (array);
 	}
