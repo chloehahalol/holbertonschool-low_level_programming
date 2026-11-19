@@ -2,6 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * str_concat - concatenates two strings
+ * @s1: string one
+ * @s2: string two
+ *
+ * Return: returns the full string concatenated
+ */
 char *str_concat(char *s1, char *s2)
 {
 	char *copy;
@@ -14,28 +21,28 @@ char *str_concat(char *s1, char *s2)
 	length2 = 0;
 	i = 0;
 	j = 0;
-	
-	if (s1 == NULL )
+
+	if (s1 == NULL)
 	{
 		s1 = "";
 	}
-	if (s2 == NULL )
-	{	
+	if (s2 == NULL)
+	{
 		s2 = "";
 	}
 
-	while (s1[length1] != '\0')	
+	while (s1[length1] != '\0')
 	{
 		length1++;
 	}
-	
+
 	while (s2[length2] != '\0')
 	{
 		length2++;
 	}
 
-	copy = malloc(length1+length2+2);
-	
+	copy = malloc(length1 + length2 + 2);
+
 	if (copy == NULL)
 	{
 		return (0);
@@ -53,6 +60,7 @@ char *str_concat(char *s1, char *s2)
 			j++;
 			i++;
 		}
+		copy[i] = '\0';
 	}
 	return (copy);
 }
