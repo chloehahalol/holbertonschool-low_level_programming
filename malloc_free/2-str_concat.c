@@ -31,7 +31,7 @@ char *check_null(char *s)
 	{
 		s = "";
 	}
-	return (&s);
+	return (s);
 }
 
 /**
