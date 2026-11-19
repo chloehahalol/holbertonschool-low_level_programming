@@ -23,17 +23,16 @@ int string_length(char *s)
  * check_null - check if the string is null
  * @s: the string to check
  *
- * Return: the string
+ * Return: pointer to the string
  */
-char check_null(char *s)
+char *check_null(char *s)
 {
 	if (s == NULL)
 	{
 		s = "";
 	}
-	return (s);
+	return (&s);
 }
-
 
 /**
  * str_concat - concatenates two strings
@@ -45,8 +44,8 @@ char check_null(char *s)
 char *str_concat(char *s1, char *s2)
 {
 	char *copy;
-	int length1 = 0;
-	int length2 = 0;
+	int length1;
+	int length2;
 	int i = 0;
 	int j = 0;
 
