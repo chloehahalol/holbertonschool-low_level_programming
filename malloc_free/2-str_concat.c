@@ -41,7 +41,7 @@ char *str_concat(char *s1, char *s2)
 		length2++;
 	}
 
-	copy = malloc(length1 + length2 + 2);
+	copy = malloc(length1 + length2 + 1);
 
 	if (copy == NULL)
 	{
