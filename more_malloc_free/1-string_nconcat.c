@@ -27,6 +27,7 @@ char *check_null(char *s)
 int check_length(char *s, int limit)
 {
 	int i = 0;
+
 	while (s[i] != '\0' && i < limit)
 	{
 		i++;
@@ -48,8 +49,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int l1;
 	unsigned int l2;
 	unsigned int i;
-
 	char *comb;
+
 	l1 = 0;
 	l2 = 0;
 	i = 0;
