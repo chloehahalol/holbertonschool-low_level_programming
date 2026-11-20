@@ -13,10 +13,10 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int l1;
-	int l2;
-	int i;
-	int j;
+	unsigned int l1;
+	unsigned int l2;
+	unsigned int i;
+	unsigned int j;
 
 	char *comb;
 	l1 = 0;
