@@ -23,15 +23,15 @@ int *array_range(int min, int max)
 		return (NULL);
 	}
 
-	length = max - min + 1;
-	arr = malloc(length);
+	length = max - min + i;
+	arr = malloc(length * sizeof(int));
 
 	if (arr == NULL)
 	{
 		return (NULL);
 	}
 
-	while (i <= length)
+	while (i < length)
 	{
 		arr[i] = min + i;
 		i++;
