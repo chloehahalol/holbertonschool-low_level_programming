@@ -2,7 +2,12 @@
 #include "dog.h"
 #include <stdlib.h>
 
-
+/**
+ * copy_string - measures length of a string and copies it
+ * @str: the string
+ *
+ * Return: the copied string
+ */
 char *copy_string(char *str)
 {
 	char *copy;
@@ -20,7 +25,7 @@ char *copy_string(char *str)
 
 	if (copy == NULL)
 	{
-		return (NULL);
+	return (NULL);
 	}
 
 	/*Copy*/
@@ -55,11 +60,24 @@ dog_t *new_dog(char *name, float age, char *owner)
 	/*Name*/
 	dog->name = copy_string(name);
 
+	if (dog->name == NULL)
+	{
+		free(dog);
+		return (NULL);
+	}
+
 	/*Age*/
 	dog->age = age;
 
 	/*Owner*/
 	dog->owner = copy_string(owner);
+
+	if (dog->owner == NULL)
+	{
+		free(dog->name);
+		free(dog);
+		return (NULL);
+	}
 
 	return (dog);
 }
