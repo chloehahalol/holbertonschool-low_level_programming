@@ -17,17 +17,12 @@ int int_index(int *array, int size, int (*cmp)(int))
 
 	if (size <= 0)
 	{
-		printf("Size is zero\n");
 		return (-1);
 	}
-	printf("Value of array: %d\n", array[i]);
-		printf("value of i: %d\n", i);
 
 	while (i < size && cmp(array[i]) == 0)
 	{
 		i++;
-		printf("Value of array: %d\n", array[i]);
-		printf("value of i: %d\n", i);
 	}
 
 	if (i >= size)
