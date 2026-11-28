@@ -19,5 +19,6 @@ struct printer
 	char type;
 	void (*f)(va_list *);
 };
+typedef struct printer printer_t;
 
 #endif
