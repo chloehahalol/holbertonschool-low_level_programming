@@ -35,7 +35,14 @@ void print_float(va_list *args)
  */
 void print_string(va_list *args)
 {
-	printf("%s", va_arg(*args, char *));
+	char *str = va_arg(*args, char *);
+	
+	if (str == NULL)
+	{
+		str = "(nil)";
+	}
+	
+	printf("%s", str);
 }
 
 /**
@@ -54,7 +61,11 @@ void print_all(const char * const format, ...)
 	int i;
 	int j = 0;
 	char *sep = "";
-
+	
+	if (format == NULL)
+	{
+		return;
+	}
 	va_start(args, format);
 
 	while (format[j] != '\0') /*Until all arguments have been found*/
